@@ -1,2 +1,2 @@
-web: ./main
-release: ./migrate
+web: cmd
+release: migrate
