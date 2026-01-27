@@ -4,10 +4,10 @@
   "apr_update_minutes": 30,
   "networks": [
     {
-      "title": "your-network-name",
-      "analytics_subgraph_url": "your-subgraph-farming-url",
-      "subgraph_farming_url": "your-subgraph-farming-url",
-      "api_key": "your-api-key"
+      "title": "Citrea",
+      "analytics_subgraph_url": "https://api.goldsky.com/api/public/project_cmamb6kkls0v2010932jjhxj4/subgraphs/analytics-mainnet/v1.0.1/gn",
+      "subgraph_farming_url": "https://api.goldsky.com/api/public/project_cmamb6kkls0v2010932jjhxj4/subgraphs/farms-mainnet/v1.0.0/gn",
+      "api_key": ""
     }
   ]
 }

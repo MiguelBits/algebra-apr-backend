@@ -5,6 +5,7 @@ import (
 	"algebra-apr-backend/internal/database"
 	"algebra-apr-backend/internal/logger"
 	"algebra-apr-backend/internal/migrations"
+	"fmt"
 	"os"
 
 	"github.com/go-gormigrate/gormigrate/v2"
