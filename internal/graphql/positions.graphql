@@ -1,0 +1,36 @@
+query GetPositions($first: Int, $id_gt: String) {
+  positions(
+    first: $first, 
+    where: { 
+      liquidity_gt: "0"
+      id_gt: $id_gt
+    }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    liquidity
+    tickLower {
+      tickIdx
+    }
+    tickUpper {
+      tickIdx
+    }
+    pool {
+      id
+      tick
+      token0 {
+        id
+        decimals
+        derivedMatic
+      }
+      token1 {
+        id
+        decimals
+        derivedMatic
+      }
+      token0Price
+    }
+    owner
+  }
+}

@@ -1,0 +1,29 @@
+upstream ${REST_API_SERVICE_NAME}-rest {
+    server ${REST_API_SERVICE_NAME}:${REST_API_SERVICE_PORT};
+}
+
+server {
+    listen 80;
+
+    server_name ${REST_API_SUBDOMAIN_PREFIX}.${HTTP_SERVER_HOST};
+
+    access_log /var/log/nginx/${REST_API_SUBDOMAIN_PREFIX}.${HTTP_SERVER_HOST}.access.log;
+    error_log /var/log/nginx/${REST_API_SUBDOMAIN_PREFIX}.${HTTP_SERVER_HOST}.error.log info;
+
+    # Apply rate limitting
+    limit_req zone=one burst=10 nodelay;
+
+    location / {
+        proxy_redirect off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        proxy_pass http://${REST_API_SERVICE_NAME}-rest;
+    }
+
+    # Security: deny access to hidden files
+    location ~ /\. {
+        deny all;
+    }
+}

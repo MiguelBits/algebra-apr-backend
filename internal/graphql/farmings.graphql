@@ -1,0 +1,19 @@
+query GetAllEternalFarmings($first: Int, $id_gt: String) {
+  eternalFarmings(
+    first: $first, 
+    where: { 
+      id_gt: $id_gt
+    }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    rewardToken
+    bonusRewardToken
+    rewardRate
+    bonusRewardRate
+    pool {
+      id
+    }
+  }
+}

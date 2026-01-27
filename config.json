@@ -1,0 +1,13 @@
+{
+  "port": "8080",
+  "log_level": "info",
+  "apr_update_minutes": 30,
+  "networks": [
+    {
+      "title": "your-network-name",
+      "analytics_subgraph_url": "your-subgraph-farming-url",
+      "subgraph_farming_url": "your-subgraph-farming-url",
+      "api_key": "your-api-key"
+    }
+  ]
+}

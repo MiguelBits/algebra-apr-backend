@@ -1,0 +1,9 @@
+query GetTokens($addresses: [String!]!) {
+  tokens(where: { id_in: $addresses }) {
+    id
+    name
+    symbol
+    decimals
+    derivedMatic
+  }
+}

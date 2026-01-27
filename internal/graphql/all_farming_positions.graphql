@@ -1,0 +1,13 @@
+query GetAllFarmingPositions($first: Int, $id_gt: String) {
+  deposits(
+    first: $first, 
+    where: { 
+      id_gt: $id_gt
+    }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    eternalFarming
+  }
+}

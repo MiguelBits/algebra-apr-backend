@@ -1,0 +1,29 @@
+query GetAllPools($first: Int, $id_gt: String) {
+  pools(
+    first: $first, 
+    where: { 
+      id_gt: $id_gt
+    }
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    tick
+    token0 {
+      id
+      name
+      decimals
+      derivedMatic
+    }
+    token1 {
+      id
+      name
+      decimals
+      derivedMatic
+    }
+    token0Price
+    liquidity
+    feesToken0
+    feesToken1
+  }
+}

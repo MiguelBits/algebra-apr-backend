@@ -1,0 +1,19 @@
+query getPoolDayDatas($date: Int!, $first: Int!, $id_gt: String) {
+  poolDayDatas(
+    where: { 
+      date: $date
+      id_gt: $id_gt
+    }
+    first: $first
+    orderBy: id
+    orderDirection: asc
+  ) {
+    id
+    feesToken0
+    feesToken1
+    date
+    pool {
+      id
+    }
+  }
+}
