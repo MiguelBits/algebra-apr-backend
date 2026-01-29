@@ -12,13 +12,19 @@ import (
 func SetupRouter(db *gorm.DB) *gin.Engine {
 	r := gin.Default()
 
-	// Configure CORS to allow all origins
+	// Configure CORS to allow specific origins
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"*"},
+		AllowOrigins: []string{
+			"http://localhost:5173",
+			"http://localhost:3000",
+			"http://localhost:8080",
+			"https://satsuma.exchange",
+			"https://www.satsuma.exchange",
+		},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: false,
+		AllowCredentials: true,
 		MaxAge:           12 * time.Hour,
 	}))
 

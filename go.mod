@@ -5,6 +5,7 @@ go 1.21.0
 toolchain go1.24.3
 
 require (
+	github.com/gin-contrib/cors v1.7.2
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-co-op/gocron v1.37.0
 	github.com/go-gormigrate/gormigrate/v2 v2.1.4
