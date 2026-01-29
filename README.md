@@ -75,3 +75,4 @@ The API provides the following endpoints for retrieving APR and TVL data:
 
 - `network` (query parameter): The blockchain network name (e.g., "Polygon", "Berachain")
 
+# CORS enabled
