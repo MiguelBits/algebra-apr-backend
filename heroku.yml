@@ -1,8 +1,7 @@
 build:
   docker:
     web: Dockerfile
-run:
-  web: cmd
 release:
+  image: web
   command:
-    - migrate
+    - ./migrate
