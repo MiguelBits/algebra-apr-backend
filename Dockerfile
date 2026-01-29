@@ -9,6 +9,9 @@ RUN go mod download
 # Copy source code
 COPY . .
 
+# Tidy dependencies (ensures go.mod and go.sum are up to date)
+RUN go mod tidy
+
 # Build static binaries
 RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o main ./cmd/main.go
 RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o migrate ./cmd/migrate/main.go
